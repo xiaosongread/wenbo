@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  @@include('css.html')
+  <script src="./vendor/vendor.js"></script><!-- 第三方插件 -->
+  <script src="./config/api.js"></script><!-- 第三方插件 -->
+</head>
+<style>
+.mbmain {
+  margin-top: 25px;
+  width: 1080px;
+  margin: 0px auto;
+}
+.mb1 {
+  margin-top: 95px;
+  height: 840px;
+  width: 1080px;
+}
+.mbimg1 {
+  margin-top: 60px;
+  margin-bottom: 45px;
+  height: 162px;
+  width: 1080px;
+}
+</style>
+<body>
+  @@include('navigation-1.html')
+  <div class="mbmain">
+    <div class="mb1">
+      @@include('index-mb1left.html')
+      @@include('nav-ywsd.html')
+    </div>
+    <img src="/images/SXWB/img/mbimg31.jpg" class="mbimg1">
+  </div>
+  <!-- <script type="text/html" id="template_test">
+    <ul>
+      {{each dataList}}
+      <li>{{$value.name}}{{$value.age}}</li>
+      {{/each}}
+    </ul>
+  </script> -->
+  @@include('footer.html')
+</body>
+<script>
+// $(function(){
+//   let list = [{
+//     name: 'zhangsan',
+//     age: 12
+//   },{
+//     name: 'lisi',
+//     age: 34
+//   }]
+//   let html = template('template_test', {dataList: list})
+//   var container = document.querySelector('#container')
+//   container.innerHTML = html
+
+//   console.log("baseUrl:", publicjs.baseUrl)
+// })
+</script>
+</html>

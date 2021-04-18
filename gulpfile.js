@@ -140,7 +140,7 @@ gulp.task('watch',function(){
     w('js/**/*.js',['buildJs','vendorJs']);
     w('config/*.js',['apiJs']);
     w('vendor/**/*.js',['images']);
-    w('images/*.{jpg,png}',['images']);
+    w('images/**/*.{jpg,png}',['images']);
     function w(path, task){
         $.watch(path, function () {
             gulp.start(task);
