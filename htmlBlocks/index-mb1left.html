@@ -2,63 +2,15 @@
   <div class="mb1left1">
     <div id="header">
       <div class="wrap">
-        <div id="slide-holder">
-          <div id="slide-runner">
-            <div class="focusbox">
-              <ul class="slides">
-
-                <li class=""
-                  style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;">
-                  <a title="第十六届深圳文博会  山西线上VR展馆" href="/article/show-5549.html" target="_blank">
-                    <span class="note-bg"></span>
-                    <span class="note-txt">第十六届深圳文博会 山西线上VR展馆</span>
-                    <img src="/images/SXWB/img/mb.jpg" draggable="false">
-                  </a>
-                </li>
-
-                <li class="flex-active-slide"
-                  style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;">
-                  <a title="第十六届深圳文博会开幕 山西线上VR展馆正式亮相“云上文博会”" href="/article/show-5547.html" target="_blank">
-                    <span class="note-bg"></span>
-                    <span class="note-txt">第十六届深圳文博会开幕 山西线上VR展馆正式亮相“云上文博会”</span>
-                    <img src="/images/SXWB/img/mb.jpg" draggable="false">
-                  </a>
-                </li>
-
-                <li class=""
-                  style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;">
-                  <a title="2020山西线上文博会，云端文博精彩呈现" href="/article/show-5454.html" target="_blank">
-                    <span class="note-bg"></span>
-                    <span class="note-txt">2020山西线上文博会，云端文博精彩呈现</span>
-                    <img src="/images/SXWB/img/mb.jpg" draggable="false">
-                  </a>
-                </li>
-
-                <li class=""
-                  style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;">
-                  <a title="点击进入第四届山西文博会VR掌上展馆" href="/article/show-4830.html" target="_blank">
-                    <span class="note-bg"></span>
-                    <span class="note-txt">点击进入第四届山西文博会VR掌上展馆</span>
-                    <img src="/images/SXWB/img/mb.jpg" draggable="false">
-                  </a>
-                </li>
-
-                <li class=""
-                  style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;">
-                  <a title="第四届山西文化产业博览交易会欢迎您！" href="/article/show-4580.html" target="_blank">
-                    <span class="note-bg"></span>
-                    <span class="note-txt">第四届山西文化产业博览交易会欢迎您！</span>
-                    <img src="/images/SXWB/img/mb.jpg" draggable="false">
-                  </a>
-                </li>
-
-              </ul>
-
-              <ol class="flex-control-nav flex-control-paging"></ol>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
             </div>
-          </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
         </div>
-
       </div>
     </div>
   </div>
@@ -159,65 +111,8 @@
 	width:691px;
 	float:left;
 }
-/*滚图*/
-/*图片大小*/
-div#header div#slide-holder div#slide-runner {
 
-width : 690px;
-height : 380px;
-overflow : hidden;
-position : relative;
-}
 
-/*数标位置*/
-div#header div#slide-holder div#slide-controls {
-left : 0;
-bottom : 0px;
-width : 691px;
-height : 35px;
-display : none;
-position : absolute;
-background : url(../img/slide-bg.png) 0 0;
-}
-div#header div#slide-holder div#slide-controls p.text {
-float : left;
-color : #fff;
-display : inline;
-font-size : 15px;
-line-height : 13px;
-margin : 12px 0 0 10px;
-text-transform : uppercase;
-}
-/*数标*/
-div#header div#slide-holder div#slide-controls p#slide-nav {
-float : right;
-height : 24px;
-display : inline;
-margin : 8px 15px 0 0;
-}
-div#header div#slide-holder div#slide-controls p#slide-nav a {
-float : left;
-width : 24px;
-height : 24px;
-display : inline;
-font-size : 11px;
-margin : 0 5px 0 0;
-line-height : 24px;
-font-weight : bold;
-text-align : center;
-text-decoration : none;
-background-position : 0 0;
-background-repeat : no-repeat;
-}
-div#header div#slide-holder div#slide-controls p#slide-nav a.on {
-background-position : 0 -24px;
-}
-div#header div#slide-holder div#slide-controls p#slide-nav a {
-background-image : url(../img/silde-nav.png);
-}
-div#nav ul li a {
-background : url(../img/nav.png) no-repeat;
-}
 
 /*滚图完成*/
 .mb1left2{
@@ -434,15 +329,19 @@ background : url(../img/nav.png) no-repeat;
     font-size: 15px;
     line-height: 28px;
 }
+.wrap,.swiper-slide,.swiper-container,.swiper-wrapper{
+  width: 690xp;
+  height: 380px;
+}
 </style>
 <script>
-var mySwiper = new Swiper ('.focusbox', {
-  // direction: 'vertical', // 垂直切换选项
-  loop: true, // 循环模式选项
-  
-  // 如果需要分页器
-  pagination: {
-    el: '.flex-control-nav',
-  }
-})        
+var mySwiper = new Swiper ('.swiper-container', {
+    direction: 'horizontal', // 垂直切换选项
+    loop: true, // 循环模式选项
+    
+    // 如果需要分页器
+    pagination: {
+      el: '.swiper-pagination',
+    }
+})             
 </script>
