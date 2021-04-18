@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="css/index5.css">
+  <script src="./vendor/vendor.js"></script>
+</head>
+<body>
+  <!-- <div class="canvas">
+    <div style="height: 300px;background: red;"></div>
+    <div style="height: 300px;background: blue;"></div>
+    <div style="height: 300px;background: yellow;"></div>
+  </div> -->
+  <div class="operation">
+    <div class="cross cross_1" style="top: 350px;">
+      <div class="line cross_line_1"></div>
+    </div>
+    <div class="cross_mark">
+      <div class="cross_distance">50px</div>
+    </div>
+    <div class="cross cross_2">
+      <div class="line cross_line_2"></div>
+    </div>
+    <div class="vertical vertical_1" style="left: 50px;">
+      <div class="line vertical_line_1"></div>
+    </div>
+    <div class="vertical_mark">
+      <div class="vertical_distance">50px</div>
+    </div>
+    <div class="vertical vertical_2">
+      <div class="line vertical_line_2"></div>
+    </div>
+  </div>
+</body>
+<script>
+window.onload = function () {
+  var cross_1 = document.querySelector('.cross_1')
+  var cross_line_1 = document.querySelector('.cross_line_1')
+  var cross_2 = document.querySelector('.cross_2')
+  var cross_line_2 = document.querySelector('.cross_line_2')
+  var vertical_1 = document.querySelector('.vertical_1')
+  var vertical_line_1 = document.querySelector('.vertical_line_1')
+  var vertical_2 = document.querySelector('.vertical_2')
+  var vertical_line_2 = document.querySelector('.vertical_line_2')
+
+  var cross_mark = document.querySelector('.cross_mark')
+  var cross_distance = document.querySelector('.cross_distance')
+  var vertical_mark = document.querySelector('.vertical_mark')
+  var vertical_distance = document.querySelector('.vertical_distance')
+
+  function replacePx(str) {
+    var reg = new RegExp("px","g")
+    var numValue = str.replace(reg, "")
+    return Number(numValue)
+  }
+  window.addEventListener('touchmove', function(ev){
+    event.preventDefault()
+    if (ev.target.parentNode === cross_1 || ev.target.parentNode === cross_line_1){
+      cross_1.style.top = event.targetTouches[0].pageY + 'px'
+    }
+    if (ev.target.parentNode === cross_2 || ev.target.parentNode === cross_line_2){
+      cross_2.style.top = event.targetTouches[0].pageY + 'px'
+    }
+    if (ev.target.parentNode === cross_1 || ev.target.parentNode === cross_line_1 || ev.target.parentNode === cross_2 || ev.target.parentNode === cross_line_2) {
+      let height = replacePx(window.getComputedStyle(cross_1).top) - replacePx(window.getComputedStyle(cross_2).top)
+      cross_mark.style.top = height > 0 ? (replacePx(window.getComputedStyle(cross_2).top) + 3) + 'px' : (replacePx(window.getComputedStyle(cross_1).top) + 3) + 'px'
+      cross_mark.style.height =  Math.abs(height) + 'px'
+      cross_distance.innerHTML = Math.round(Math.abs(height)) + 'px'
+    }
+    
+    if (ev.target.parentNode === vertical_1 || ev.target.parentNode === vertical_line_1){
+      vertical_1.style.left = event.targetTouches[0].pageX + 'px'
+    }
+    if (ev.target.parentNode === vertical_2 || ev.target.parentNode === vertical_line_2){
+      vertical_2.style.left = event.targetTouches[0].pageX + 'px'
+    }
+    if (ev.target.parentNode === vertical_1 || ev.target.parentNode === vertical_line_1 || ev.target.parentNode === vertical_2 || ev.target.parentNode === vertical_line_2) {
+      let width = replacePx(window.getComputedStyle(vertical_1).left) - replacePx(window.getComputedStyle(vertical_2).left)
+      vertical_mark.style.left = width > 0 ? (replacePx(window.getComputedStyle(vertical_2).left) + 3) + 'px' : (replacePx(window.getComputedStyle(vertical_1).left) + 3) + 'px'
+      vertical_mark.style.width =  Math.abs(width) + 'px'
+      vertical_distance.innerHTML = Math.round(Math.abs(width)) + 'px'
+    }
+  })
+}
+</script>
+</html>

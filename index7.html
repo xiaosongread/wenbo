@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="css/animate.css">
+  <!-- <link rel="stylesheet" href="animate.min.css"> -->
+  <script src="./vendor/vendor.js"></script>
+</head>
+<body>
+<div class="hov1">hov1</div>
+</body>
+<script>
+function animateCSS(element, animationName, callback) {
+    const node = document.querySelector(element)
+    node.classList.add('animated', animationName)
+
+    function handleAnimationEnd() {
+        node.classList.remove('animated', animationName)
+        node.removeEventListener('animationend', handleAnimationEnd)
+
+        if (typeof callback === 'function') callback()
+    }
+
+    node.addEventListener('animationend', handleAnimationEnd)
+}
+$('.hov1').click(function() {
+  animateCSS('hov1', 'animated bounceOutLeft')
+})
+</script>
+</html>

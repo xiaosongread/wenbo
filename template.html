@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  @@include('css.html')
+  <link rel="stylesheet" href="./css/template.css">
+  <script src="./vendor/vendor.js"></script><!-- 第三方插件 -->
+  <script src="./config/api.js"></script><!-- 第三方插件 -->
+</head>
+<body>
+  @@include('header.html')
+  <p>templatetest.html</p>
+  <div id="container"></div>
+  <script type="text/html" id="template_test">
+    <ul>
+      {{each dataList}}
+      <li>{{$value.name}}{{$value.age}}</li>
+      {{/each}}
+    </ul>
+  </script>
+  @@include('footer.html')
+</body>
+<script>
+$(function(){
+  let list = [{
+    name: 'zhangsan',
+    age: 12
+  },{
+    name: 'lisi',
+    age: 34
+  }]
+  let html = template('template_test', {dataList: list})
+  var container = document.querySelector('#container')
+  container.innerHTML = html
+
+  console.log("baseUrl:", publicjs.baseUrl)
+})
+</script>
+</html>

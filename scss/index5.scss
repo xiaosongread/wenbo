@@ -1,0 +1,81 @@
+$green: green;
+$red: red;
+$purple: purple;
+body{
+	margin: 0;
+	background: #000000;
+}
+.operation{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	.line{
+		width: 100%;
+		height: 1px;
+		background: #dddddd;
+	}
+	.cross{
+		width: 100%;
+		height: 7px;
+		position: absolute;
+		top: 400px;
+		left: 0;
+		background: red;
+		.line{
+			margin: 3px 0;
+			&:hover{
+				cursor:pointer;
+			}
+		}
+	}
+	.cross_mark{
+		width: 1px;
+		height: 50px;
+		background: red;
+		position: absolute;
+		top: 353px;
+		left: 260px;
+		display: flex;
+		align-items: center;
+		.cross_distance{
+			font-size: 13px;
+			color: red;
+			text-align: center;
+		}
+	}
+	.vertical{
+		width: 7px;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 100px;
+		background: red;
+		.line{
+			width: 1px;
+			height: 100%;
+			background: #dddddd;
+			margin: 0 3px;
+		}
+	}
+	.vertical_mark{
+		width: 50px;
+		height: 1px;
+		background: red;
+		position: absolute;
+		top: 40px;
+		left: 53px;
+		display: flex;
+		justify-content: center;
+		.vertical_distance{
+			width: 80px;
+			height: 35px;
+			font-size: 13px;
+			color: red;
+			text-align: center;
+		}
+	}
+}

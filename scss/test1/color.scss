@@ -1,0 +1,39 @@
+$primary: #e74c3c;
+$yellow: #E6A64C;
+$active:#fdeded;
+$pBorder:#fce2e2;
+$border:#edecec;
+$border2:#d9d9d9;
+$title:#212628;
+$sub:#666;
+$bg:#fafafa;
+$header-bg:#f1f1f1;
+$form-bg:#f7f7f7;
+$white:#fff;
+$black:#333;
+$color9: #999999;
+$color4: #444;
+$blue:#c7e3ff;
+$sub5d:#5d5d5d;
+$bbb:#bbb;
+.text-primary{color:$primary !important}
+.text-yellow{color:$yellow !important}
+.text-title{color:$title}
+.text-sub{color:$sub}
+.bg-sub{background:$sub}
+.bg-form{background:$form-bg !important}
+.text-white{color:$white !important}
+.text-color9{color:$color9}
+.text-color4{color:$color4}
+.text-black{color:$black}
+.bg-bg{background:$bg}
+.bg-white{background:$white}
+.bg-primary{background:$primary}
+.bg-active{background:$active}
+.bg-bbb{background: $bbb}
+.text-blue{color: $blue}
+.bg-border{background:$border}
+.text-5d{color: $sub5d}
+.text-border2{color: $border2}
+
+.border-primary{border-bottom: 1px solid $primary}

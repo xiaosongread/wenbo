@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="css/index6.css">
+  <script src="./vendor/vendor.js"></script>
+</head>
+<body>
+  <div class="val-box" id="val-box">
+    <input type="text" id="val-code-input" maxlength="4">
+    <div name="val-item" class="val-item"></div>
+    <div name="val-item" class="val-item"></div>
+    <div name="val-item" class="val-item"></div>
+    <div name="val-item" class="val-item"></div>
+  </div>
+</body>
+<script>
+window.onload = function () {
+  var valCodeInput = document.querySelector('#val-code-input')
+  var valCodeItems = document.querySelectorAll('.val-item')
+  // 非IE
+  valCodeInput.oninput = function(e) {
+    var inputValText = this.value
+    if (!inputValText.length) return
+    valCodeItems[inputValText.length - 1].innerHTML = inputValText.substring(inputValText.length - 1, inputValText.length)
+  }
+  // IE
+  valCodeInput.onpropertychange = function(e) {
+    var inputValText = this.value
+    if (inputValText.length) return
+    valCodeItems[inputValText.length - 1].innerHTML = inputValText.substring(inputValText.length - 1, inputValText.length)
+  }
+  valCodeInput.onkeyup = function(e) {
+    if(e.keyCode === 8) {
+      var inputValText = this.value
+      console.log(22, inputValText)
+      valCodeItems[inputValText.length].innerHTML = ''
+    }
+  }
+}
+// $(function(){
+//   var valCodeInput = $("#val-code-input")
+//   var valCodeItems = $("div[name='val-item']")
+
+//   valCodeInput.on('input propertychange change', function(){
+//     var inputValText = valCodeInput.val()
+//     console.log(valCodeInput.val())
+//     $(valCodeItems[inputValText.length - 1]).text(inputValText.substring(inputValText.length - 1, inputValText.length))
+//   })
+
+//   valCodeInput.on('keyup', function(e) {
+//     if(e.keyCode === 8) {
+//       var inputValText = valCodeInput.val()
+//       $(valCodeItems[inputValText.length]).text("")
+//     }
+//   })
+// })
+</script>
+</html>
