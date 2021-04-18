@@ -44,7 +44,7 @@ const config = {
         // 'vendor/swiper/swiper-2.7.6.js'
     ],
     vendor_css: [
-        'vendor/swiper/swiper-2.7.6.css'
+        // 'vendor/swiper/swiper-2.7.6.css'
     ],
 
     //压缩配置
@@ -97,6 +97,7 @@ gulp.task("sass",function(){
                .pipe($.sass())
                .on('error', notify)
                .pipe($.minifyCss())
+               .src('vendor/swiper/swiper-2.7.6.css')
                .pipe(gulp.dest('dist/css'))
 })
 
@@ -106,6 +107,9 @@ gulp.task("buildJs",function(){
                 .pipe($.babel({
                     presets: ['es2015']
                 }))
+                .pipe($.uglify())
+                .pipe(gulp.dest('dist/js'))
+                .src("vendor/swiper/swiper-2.7.6.js")
                 .pipe($.uglify())
                 .pipe(gulp.dest('dist/js'))
                 .pipe($.connect.reload());

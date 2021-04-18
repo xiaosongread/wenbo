@@ -54,13 +54,7 @@
 
               </ul>
 
-              <ol class="flex-control-nav flex-control-paging">
-                <li><a class="">1</a></li>
-                <li><a class="flex-active">2</a></li>
-                <li><a class="">3</a></li>
-                <li><a class="">4</a></li>
-                <li><a class="">5</a></li>
-              </ol>
+              <ol class="flex-control-nav flex-control-paging"></ol>
             </div>
           </div>
         </div>
@@ -440,5 +434,15 @@ background : url(../img/nav.png) no-repeat;
     font-size: 15px;
     line-height: 28px;
 }
-
 </style>
+<script>
+var mySwiper = new Swiper ('.focusbox', {
+  // direction: 'vertical', // 垂直切换选项
+  loop: true, // 循环模式选项
+  
+  // 如果需要分页器
+  pagination: {
+    el: '.flex-control-nav',
+  }
+})        
+</script>

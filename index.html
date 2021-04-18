@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   @@include('css.html')
+  <link href="./vendor/swiper/swiper-2.7.6.css">
+  <script src="./vendor/swiper/swiper-2.7.6.js"></script>
   <script src="./vendor/vendor.js"></script><!-- 第三方插件 -->
   <script src="./config/api.js"></script><!-- 第三方插件 -->
 </head>
@@ -26,6 +28,15 @@
   height: 162px;
   width: 1080px;
 }
+.mb2 {
+    height: 1245px;
+    width: 1080px;
+}
+.mg3{
+  margin-top: 35px;
+  height: 546px;
+  width: 1080px;
+}
 </style>
 <body>
   @@include('navigation-1.html')
@@ -35,6 +46,16 @@
       @@include('nav-ywsd.html')
     </div>
     <img src="/images/SXWB/img/mbimg31.jpg" class="mbimg1">
+    <div class="mb2">
+      @@include('index-mb2left.html')
+      @@include('index-mb2right.html')
+    </div>
+    <img src="/images/SXWB/img/mbimg31.jpg" class="mbimg1">
+    <div class="mb3">
+      @@include('index-mb3left.html')
+      @@include('index-mb3right.html')
+    </div>
+    <img src="/images/SXWB/img/mg3.jpg" class="mg3">
   </div>
   <!-- <script type="text/html" id="template_test">
     <ul>
