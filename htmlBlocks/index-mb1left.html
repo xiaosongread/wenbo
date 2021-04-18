@@ -4,9 +4,18 @@
       <div class="wrap">
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 2</div>
-                <div class="swiper-slide">Slide 3</div>
+                <div class="swiper-slide">
+                  <img src="/images/SXWB/img/mb.jpg">
+                  <div class="swiper-tit">第十六届深圳文博会开幕 山西线上VR展馆正式亮相“云上文博会”</div>
+                </div>
+                <div class="swiper-slide">
+                  <img src="/images/SXWB/img/whcy.jpg">
+                  <div class="swiper-tit">第十六届深圳文博会  山西线上VR展馆”</div>
+                </div>
+                <div class="swiper-slide">
+                  <img src="/images/SXWB/img/mb.jpg">
+                  <div class="swiper-tit">山西文旅业“加速”跨越升级</div>
+                </div>
             </div>
             <!-- 如果需要分页器 -->
             <div class="swiper-pagination"></div>
@@ -106,13 +115,11 @@
 	width:691px;
 	float:left;
 }
-.mb1left1{
+.mb1left1 {
 	height:370px;
 	width:691px;
 	float:left;
 }
-
-
 
 /*滚图完成*/
 .mb1left2{
@@ -329,19 +336,92 @@
     font-size: 15px;
     line-height: 28px;
 }
-.wrap,.swiper-slide,.swiper-container,.swiper-wrapper{
-  width: 690xp;
+#header{
+  width: 100%;
+  height: 100%;
+}
+.swiper-container{
+  width: 690px;
   height: 380px;
+  position: relative;
+  overflow: hidden;
+}
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    box-sizing: content-box;
+}
+.swiper-slide{
+  /* width: 690px;
+  height: 380px; */
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+}
+.swiper-slide img{
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide .swiper-tit{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  display: block;
+  padding: 0 5px;
+  line-height: 40px;
+  height: 38px;
+  float: left;
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: bold;
+  background: rgba(0,0,0,0.6);
+}
+.swiper-pagination{
+  /* width: 690px;
+  height: 40px; */
+  position: absolute;
+  bottom: 16px;
+  right: 5px;
+  z-index: 10;
+  display: flex;
+  text-align: right;
+}
+.swiper-pagination-bullet{
+  display: block;
+  width: 8px;
+  height: 8px;
+  text-indent: -9999px;
+  border: 1px solid #999;
+  border-radius: 8px;
+  margin: 0 5px 0 0;
+  cursor: pointer;
+  overflow: hidden;
+}
+.swiper-pagination-bullet-active{
+  background: #f90;
+  border-color: #f90;
+  cursor: default;
 }
 </style>
 <script>
 var mySwiper = new Swiper ('.swiper-container', {
     direction: 'horizontal', // 垂直切换选项
     loop: true, // 循环模式选项
-    
+    speed:2000,
+    observer:true,
+    observeParents:true,
+    autoplayDisableOnInteraction : false,
+    autoplay:1500,
+    effect:'fade',
     // 如果需要分页器
-    pagination: {
-      el: '.swiper-pagination',
-    }
+    pagination: '.swiper-pagination',
+    paginationClickable: true
 })             
 </script>

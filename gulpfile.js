@@ -71,7 +71,7 @@ gulp.task('vendorJs', () => {
 });
   
 gulp.task('html', function () {
-    return gulp.src(['*.html', 'htmlBlocks/*.html', '!modules/*.html','!node_modules/**/*.html'])
+    return gulp.src(['*.html', '!modules/*.html','!node_modules/**/*.html'])
                .pipe($.fileInclude({
                     prefix: '@@',
                     basepath: './htmlBlocks/'
@@ -80,6 +80,18 @@ gulp.task('html', function () {
                 //     "http://www.songyanbin.com":"localhost"
                 // }]))
                 .pipe(gulp.dest('dist'))
+                .pipe($.connect.reload());
+})
+gulp.task('html1', function () {
+    return gulp.src(['htmlBlocks/*.html'])
+               .pipe($.fileInclude({
+                    prefix: '@@',
+                    basepath: './htmlBlocks/'
+                }))
+                // .pipe(batchReplace([{
+                //     "http://www.songyanbin.com":"localhost"
+                // }]))
+                .pipe(gulp.dest('./dist/htmlBlocks'))
                 .pipe($.connect.reload());
 })
 
@@ -128,7 +140,7 @@ gulp.task('images',function(){
     //return gulp.src('images/*.jpg').pipe(gulp.dest('dest/images')) // 匹配所有.jpg的图片
     return gulp.src('images/**/*')
                .pipe($.imagemin())
-               .pipe(gulp.dest('dist/images')) // gulp.src('images/**/*') gulp.src('images/*/*'
+               .pipe(gulp.dest('./dist/images')) // gulp.src('images/**/*') gulp.src('images/*/*'
 })
 
 // 监听文件变化
@@ -180,7 +192,7 @@ gulp.task("clean",()=>{
 })
 
 // 整体打包 gulp build
-gulp.task('build-start',['clean','html','sass','buildJs','images', 'vendorJs'],function(){
+gulp.task('build-start',['clean','html', 'html1','sass','buildJs','images', 'vendorJs'],function(){
     console.info("gulp前端模板")
     console.warn("如有问题，请提issues帮忙完善")
     console.info("地址：https://github.com/xiaosongread/github-xiaosongread-hexo")
