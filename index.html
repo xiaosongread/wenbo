@@ -8,6 +8,7 @@
   @@include('css.html')
   <!-- <link href="./vendor/swiper/swiper-2.7.6.css"> -->
   <script src="./js/swiper-2.7.6.js"></script>
+  <script src="./js/tab.js"></script>
   <script src="./vendor/vendor.js"></script><!-- 第三方插件 -->
   <script src="./config/api.js"></script><!-- 第三方插件 -->
 </head>
@@ -67,6 +68,14 @@
   @@include('footer.html')
 </body>
 <script>
+// 切换标签
+$(function(){
+	new tab('test1_li_now_', '_', null, 'onmouseover');
+	new tab('test2_li_now_', '_', null, 'onmouseover');
+	new tab('test3_li_now_', '_', null, 'onmouseover');
+	new tab('test4_li_now_', '_', null, 'onmouseover');
+  new tab('test5_li_now_', '_', null, 'onmouseover');
+})
 // $(function(){
 //   let list = [{
 //     name: 'zhangsan',

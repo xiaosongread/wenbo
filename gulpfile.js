@@ -82,18 +82,18 @@ gulp.task('html', function () {
                 .pipe(gulp.dest('dist'))
                 .pipe($.connect.reload());
 })
-gulp.task('html1', function () {
-    return gulp.src(['htmlBlocks/*.html'])
-               .pipe($.fileInclude({
-                    prefix: '@@',
-                    basepath: './htmlBlocks/'
-                }))
-                // .pipe(batchReplace([{
-                //     "http://www.songyanbin.com":"localhost"
-                // }]))
-                .pipe(gulp.dest('./dist/htmlBlocks'))
-                .pipe($.connect.reload());
-})
+// gulp.task('html1', function () {
+//     return gulp.src(['htmlBlocks/*.html'])
+//                .pipe($.fileInclude({
+//                     prefix: '@@',
+//                     basepath: './htmlBlocks/'
+//                 }))
+//                 // .pipe(batchReplace([{
+//                 //     "http://www.songyanbin.com":"localhost"
+//                 // }]))
+//                 .pipe(gulp.dest('./dist/htmlBlocks'))
+//                 .pipe($.connect.reload());
+// })
 
 // scss
 function notify(err) {
@@ -191,8 +191,8 @@ gulp.task("clean",()=>{
     return del(["dist"])
 })
 
-// 整体打包 gulp build
-gulp.task('build-start',['clean','html', 'html1','sass','buildJs','images', 'vendorJs'],function(){
+// 整体打包 gulp build  , 'html1'
+gulp.task('build-start',['clean','html','sass','buildJs','images', 'vendorJs'],function(){
     console.info("gulp前端模板")
     console.warn("如有问题，请提issues帮忙完善")
     console.info("地址：https://github.com/xiaosongread/github-xiaosongread-hexo")

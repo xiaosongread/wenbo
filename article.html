@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  @@include('css.html')
+  <!-- <link href="./vendor/swiper/swiper-2.7.6.css"> -->
+  <script src="./js/swiper-2.7.6.js"></script>
+  <script src="./js/tab.js"></script>
+  <script src="./vendor/vendor.js"></script><!-- 第三方插件 -->
+  <script src="./config/api.js"></script><!-- 第三方插件 -->
+</head>
+<style>
+.swiper-container{
+  width: 1080px;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+}
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    box-sizing: content-box;
+}
+.swiper-slide{
+  /* width: 690px;
+  height: 380px; */
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+}
+.swiper-slide img{
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide .swiper-tit{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  display: block;
+  padding: 0 5px;
+  line-height: 40px;
+  height: 38px;
+  float: left;
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: bold;
+  background: rgba(0,0,0,0.6);
+}
+.swiper-pagination{
+  /* width: 690px;
+  height: 40px; */
+  position: absolute;
+  bottom: 16px;
+  right: 5px;
+  z-index: 10;
+  display: flex;
+  text-align: right;
+}
+.swiper-pagination-bullet{
+  display: block;
+  width: 8px;
+  height: 8px;
+  text-indent: -9999px;
+  border: 1px solid #999;
+  border-radius: 8px;
+  margin: 0 5px 0 0;
+  cursor: pointer;
+  overflow: hidden;
+}
+.swiper-pagination-bullet-active{
+  background: #f90;
+  border-color: #f90;
+  cursor: default;
+}
+
+.contain{
+  width: 1080px;
+  margin: 0 auto;
+}
+.secondnav{
+	margin-top:30px;
+	height:45px;
+	width:1080px;
+	float:left;
+}
+.secondnavimg{
+	margin-left:30px;
+	margin-right:28px;
+	height:45px;
+	width:45px;
+	float:left;
+}
+.secondli1{
+	margin-top:5px;
+	margin-right:5px;
+	height:15px;
+	width:15px;
+	float:left;
+	background:url(/images/SXWB/img/菱形.png);
+}
+.secondli1_1{
+	margin-left:65px;
+	margin-top:5px;
+	margin-right:5px;
+	height:15px;
+	width:15px;
+	float:left;
+	background:url(/images/SXWB/img/菱形.png);
+}
+.secondli2{
+	height:45px;
+	width:300px;
+	float:left;
+	font-size:19px;
+	font-weight:bold;
+	line-height:25px;
+	padding-top:0px;
+}
+a:link{
+	color:black;
+	text-decoration:none;
+}		/* 未访问的链接 */
+a:visited{
+	color:black;
+}	/* 已访问的链接 */
+a:hover{
+	color:black;
+	text-decoration:underline;
+}	/* 鼠标移动到链接上 */
+a:active{
+	color:black;
+}  
+.secondm {
+  height: 2070px;
+  width: 1080px;
+  float: left;
+}
+</style>
+<body>
+  @@include('navigation-1.html')
+  <div class="contain">
+    <div class="wrap">
+      <div class="swiper-container">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="/images/SXWB/img/mb.jpg">
+                <div class="swiper-tit">第十六届深圳文博会开幕 山西线上VR展馆正式亮相“云上文博会”</div>
+              </div>
+              <div class="swiper-slide">
+                <img src="/images/SXWB/img/whcy.jpg">
+                <div class="swiper-tit">第十六届深圳文博会  山西线上VR展馆”</div>
+              </div>
+              <div class="swiper-slide">
+                <img src="/images/SXWB/img/mb.jpg">
+                <div class="swiper-tit">山西文旅业“加速”跨越升级</div>
+              </div>
+          </div>
+          <!-- 如果需要分页器 -->
+          <div class="swiper-pagination"></div>
+      </div>
+    </div>
+    <div class="secondnav">
+      <div class="secondnavimg">
+        <a href="#">
+          <img src="/images/SXWB/img/secondnav1.jpg">
+        </a>
+      </div>
+      <div class="secondli1">
+      </div>
+      <div class="secondli2">
+        <a title="擂鼓齐奏，2020年中国农民丰收节大同活动月喜庆丰收" href="/article/show-5487.html"
+          target="_blank">擂鼓齐奏，2020年中国农民丰收节大同活动月喜庆丰收</a></div>
+      <div class="secondad">
+      </div>
+      <div class="secondli1">
+      </div>
+      <div class="secondli2">
+        <a title="山西省第六次旅游发展大会在忻州召开" href="/article/show-5455.html" target="_blank">山西省第六次旅游发展大会在忻州召开</a></div>
+      <div class="secondad">
+      </div>
+      <div class="secondli1">
+      </div>
+      <div class="secondli2">
+        <a title="山西文化产业如何“破茧成蝶”？" href="/article/show-4944.html" target="_blank">山西文化产业如何“破茧成蝶”？</a></div>
+      <div class="secondad">
+      </div>
+    </div>
+    <div class="secondm">
+      @@include('article-left.html')
+      @@include('nav-right.html')
+    </div>
+  </div>
+  @@include('footer.html')
+</body>
+<script>
+var mySwiper = new Swiper ('.swiper-container', {
+    direction: 'horizontal', // 垂直切换选项
+    loop: true, // 循环模式选项
+    speed:2000,
+    observer:true,
+    observeParents:true,
+    autoplayDisableOnInteraction : false,
+    autoplay:1500,
+    effect:'fade',
+    // 如果需要分页器
+    pagination: '.swiper-pagination',
+    paginationClickable: true
+})
+</script>
+</html>
