@@ -139,6 +139,22 @@ var mySwiper = new Swiper ('.swiper-container', {
     pagination: '.swiper-pagination',
     paginationClickable: true
 })
+$(function(){
+  setTimeout(function(){
+    var obj = {
+      tswbData: [{
+        id: 1,
+        title: '朔州展区：塞上绿洲·美丽朔州',
+        des: '朔州市通过舞台表演区、文创产品展示区、文创产品实际操作区以及媒体融合展示区的展示展演，给予观众丰富多样的观展体验。',
+        time: '2019年12月09日',
+        img: '/images/SXWB/img/mb.jpg'
+      }]
+    }
+    let html = template('a', {dataList: list})
+    var container = document.querySelector('#container')
+    container.innerHTML = html
+  },2000)
+})
 </script>
 
 
